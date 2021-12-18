@@ -11,7 +11,7 @@ build:
 	podman build -t $(TAG) -f Containerfile ./cache
 
 run:
-	podman run --rm --name $(NAME) -d -w /data/share -p 139:139 -p 445:445 -p 137:137/udp -p 138:138/udp --volume /data/share:/data/share:z $(TAG)
+	podman run --rm --name $(NAME)_$$PPID -d -w /data/share -p 139:139 -p 445:445 -p 137:137/udp -p 138:138/udp --volume /data/share:/data/share:z $(TAG)
 
 remove:
 	podman rmi -f $(TAG)
