@@ -17,4 +17,4 @@ RUN rm -f /tmp/users.list
 RUN mkdir -p /data/share
 WORKDIR /data/share
 
-CMD /bin/bash -c "smbd --foreground --log-stdout --no-process-group"
+CMD /bin/bash -c "smbd --foreground --no-process-group"
